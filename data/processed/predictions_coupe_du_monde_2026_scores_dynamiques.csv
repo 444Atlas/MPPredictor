@@ -1,0 +1,328 @@
+_date,_home_team,_away_team,_tournament,proba_victoire_home,proba_nul_ou_defaite_home,prediction_ there,pred_home_goals,pred_away_goals,score_exact_predit
+2026-01-03,Senegal,Sudan,African Cup of Nations,0.8845842,0.11541581,Victoire Dom,3,0,3 - 0
+2026-01-03,Mali,Tunisia,African Cup of Nations,0.7692263,0.23077369,Victoire Dom,2,0,2 - 0
+2026-01-04,Morocco,Tanzania,African Cup of Nations,0.90114844,0.09885156,Victoire Dom,3,0,3 - 0
+2026-01-04,South Africa,Cameroon,African Cup of Nations,0.50804883,0.49195117,Match Serré / Nul,1,1,1 - 1
+2026-01-05,Nigeria,Mozambique,African Cup of Nations,0.61607325,0.38392675,Victoire Dom,1,1,1 - 1
+2026-01-05,Egypt,Benin,African Cup of Nations,0.8462484,0.15375161,Victoire Dom,3,0,3 - 0
+2026-01-06,Ivory Coast,Burkina Faso,African Cup of Nations,0.71087235,0.28912765,Victoire Dom,2,0,2 - 0
+2026-01-06,Algeria,DR Congo,African Cup of Nations,0.7990354,0.20096463,Victoire Dom,2,0,2 - 0
+2026-01-09,Mali,Senegal,African Cup of Nations,0.6306162,0.3693838,Victoire Dom,1,1,1 - 1
+2026-01-09,Morocco,Cameroon,African Cup of Nations,0.6273617,0.3726383,Victoire Dom,1,1,1 - 1
+2026-01-10,Algeria,Nigeria,African Cup of Nations,0.57128286,0.42871714,Victoire Dom,1,1,1 - 1
+2026-01-10,Egypt,Ivory Coast,African Cup of Nations,0.54464537,0.45535463,Match Serré / Nul,1,1,1 - 1
+2026-01-14,Senegal,Egypt,African Cup of Nations,0.7949972,0.20500278,Victoire Dom,2,0,2 - 0
+2026-01-14,Morocco,Nigeria,African Cup of Nations,0.52490884,0.47509116,Match Serré / Nul,1,1,1 - 1
+2026-01-17,Egypt,Nigeria,African Cup of Nations,0.5649646,0.4350354,Victoire Dom,1,1,1 - 1
+2026-01-18,Morocco,Senegal,African Cup of Nations,0.4956912,0.5043088,Match Serré / Nul,1,1,1 - 1
+2026-01-18,Bolivia,Panama,Friendly,0.33827204,0.66172796,Défaite/Nul Dom,0,1,0 - 1
+2026-01-18,Grenada,Jamaica,Friendly,0.094621845,0.90537816,Défaite/Nul Dom,0,4,0 - 4
+2026-01-22,Panama,Mexico,Friendly,0.3013462,0.6986538,Défaite/Nul Dom,0,1,0 - 1
+2026-01-25,Bolivia,Mexico,Friendly,0.17741103,0.822589,Défaite/Nul Dom,0,2,0 - 2
+2026-01-26,Uzbekistan,China,Friendly,0.87807035,0.121929646,Victoire Dom,3,0,3 - 0
+2026-02-25,Mexico,Iceland,Friendly,0.904053,0.09594703,Victoire Dom,3,0,3 - 0
+2026-03-15,Bolivia,Trinidad and Tobago,Friendly,0.5818689,0.4181311,Victoire Dom,1,1,1 - 1
+2026-03-25,Kazakhstan,Namibia,FIFA Series,0.61226064,0.38773936,Victoire Dom,1,1,1 - 1
+2026-03-25,Equatorial Guinea,Kyrgyzstan,Friendly,0.8674791,0.13252091,Victoire Dom,3,0,3 - 0
+2026-03-25,Puerto Rico,Guam,FIFA Series,0.95468575,0.045314252,Victoire Dom,5,0,5 - 0
+2026-03-25,Bermuda,DR Congo,Friendly,0.18329942,0.8167006,Défaite/Nul Dom,0,2,0 - 2
+2026-03-26,Colombia,Croatia,Friendly,0.64142513,0.35857487,Victoire Dom,1,0,1 - 0
+2026-03-26,Italy,Northern Ireland,FIFA World Cup qualification,0.77548605,0.22451395,Victoire Dom,2,0,2 - 0
+2026-03-26,Bolivia,Suriname,FIFA World Cup qualification,0.67003125,0.32996875,Victoire Dom,1,0,1 - 0
+2026-03-26,Cyprus,Belarus,Friendly,0.20442626,0.7955737,Défaite/Nul Dom,0,2,0 - 2
+2026-03-26,Moldova,Lithuania,Friendly,0.571599,0.428401,Victoire Dom,1,1,1 - 1
+2026-03-26,Georgia,Israel,Friendly,0.5242542,0.4757458,Match Serré / Nul,1,1,1 - 1
+2026-03-26,Brazil,France,Friendly,0.6893598,0.31064022,Victoire Dom,1,0,1 - 0
+2026-03-26,New Caledonia,Jamaica,FIFA World Cup qualification,0.7041118,0.2958882,Victoire Dom,2,0,2 - 0
+2026-03-26,Poland,Albania,FIFA World Cup qualification,0.6165565,0.38344347,Victoire Dom,1,1,1 - 1
+2026-03-26,Wales,Bosnia and Herzegovina,FIFA World Cup qualification,0.52835256,0.47164744,Match Serré / Nul,1,1,1 - 1
+2026-03-26,Slovakia,Kosovo,FIFA World Cup qualification,0.56201243,0.43798757,Victoire Dom,1,1,1 - 1
+2026-03-26,Denmark,North Macedonia,FIFA World Cup qualification,0.8256054,0.17439461,Victoire Dom,2,0,2 - 0
+2026-03-26,Tanzania,Liechtenstein,FIFA Series,0.95199007,0.048009932,Victoire Dom,5,0,5 - 0
+2026-03-26,Ukraine,Sweden,FIFA World Cup qualification,0.6529068,0.34709322,Victoire Dom,1,0,1 - 0
+2026-03-26,Dominican Republic,El Salvador,CONCACAF Series,0.61680406,0.38319594,Victoire Dom,1,1,1 - 1
+2026-03-26,Turkey,Romania,FIFA World Cup qualification,0.69678414,0.30321586,Victoire Dom,1,0,1 - 0
+2026-03-27,Guinea,Togo,"Morocco, Capital of African Football",0.8318835,0.16811651,Victoire Dom,2,0,2 - 0
+2026-03-27,Liberia,Benin,"Morocco, Capital of African Football",0.50600165,0.49399835,Match Serré / Nul,1,1,1 - 1
+2026-03-27,Greece,Paraguay,Friendly,0.32073006,0.6792699,Défaite/Nul Dom,0,1,0 - 1
+2026-03-27,Libya,Niger,"Morocco, Capital of African Football",0.830842,0.16915798,Victoire Dom,2,0,2 - 0
+2026-03-27,Saudi Arabia,Egypt,Friendly,0.34099483,0.65900517,Défaite/Nul Dom,0,1,0 - 1
+2026-03-27,Morocco,Ecuador,Friendly,0.74270487,0.25729513,Victoire Dom,2,0,2 - 0
+2026-03-27,Netherlands,Norway,Friendly,0.6695404,0.3304596,Victoire Dom,1,0,1 - 0
+2026-03-27,Austria,Ghana,Friendly,0.72965324,0.27034676,Victoire Dom,2,0,2 - 0
+2026-03-27,South Africa,Panama,Friendly,0.34252375,0.65747625,Défaite/Nul Dom,0,1,0 - 1
+2026-03-27,Russia,Nicaragua,Friendly,0.92868423,0.071315765,Victoire Dom,4,0,4 - 0
+2026-03-27,Montenegro,Andorra,Friendly,0.7083548,0.29164523,Victoire Dom,1,0,1 - 0
+2026-03-27,Argentina,Mauritania,Friendly,0.92421484,0.07578516,Victoire Dom,4,0,4 - 0
+2026-03-27,England,Uruguay,Friendly,0.46460328,0.5353967,Match Serré / Nul,1,1,1 - 1
+2026-03-27,Spain,Serbia,Friendly,0.7035466,0.29645342,Victoire Dom,1,0,1 - 0
+2026-03-27,Algeria,Guatemala,Friendly,0.9280297,0.071970284,Victoire Dom,4,0,4 - 0
+2026-03-27,Australia,Cameroon,FIFA Series,0.43394473,0.5660553,Défaite/Nul Dom,1,1,1 - 1
+2026-03-27,Azerbaijan,Saint Lucia,FIFA Series,0.67502636,0.32497364,Victoire Dom,1,0,1 - 0
+2026-03-27,Indonesia,Saint Kitts and Nevis,FIFA Series,0.86135215,0.13864785,Victoire Dom,3,0,3 - 0
+2026-03-27,Kenya,Estonia,FIFA Series,0.5674126,0.4325874,Victoire Dom,1,1,1 - 1
+2026-03-27,Iran,Nigeria,Friendly,0.57227254,0.42772746,Victoire Dom,1,1,1 - 1
+2026-03-27,Venezuela,Trinidad and Tobago,FIFA Series,0.8135895,0.18641049,Victoire Dom,2,0,2 - 0
+2026-03-27,Uzbekistan,Gabon,FIFA Series,0.72944576,0.27055424,Victoire Dom,2,0,2 - 0
+2026-03-27,Costa Rica,Jordan,Friendly,0.8182077,0.18179232,Victoire Dom,2,0,2 - 0
+2026-03-27,New Zealand,Finland,FIFA Series,0.4797137,0.5202863,Match Serré / Nul,1,1,1 - 1
+2026-03-27,Switzerland,Germany,Friendly,0.25636753,0.74363244,Défaite/Nul Dom,0,2,0 - 2
+2026-03-27,Rwanda,Grenada,FIFA Series,0.5554696,0.44453043,Victoire Dom,1,1,1 - 1
+2026-03-28,Hungary,Slovenia,Friendly,0.36854053,0.6314595,Défaite/Nul Dom,0,1,0 - 1
+2026-03-28,Ivory Coast,South Korea,Friendly,0.8436559,0.15634412,Victoire Dom,2,0,2 - 0
+2026-03-28,Mexico,Portugal,Friendly,0.26119703,0.73880297,Défaite/Nul Dom,0,2,0 - 2
+2026-03-28,San Marino,Faroe Islands,Friendly,0.035020724,0.9649793,Défaite/Nul Dom,0,5,0 - 5
+2026-03-28,Kyrgyzstan,Madagascar,Friendly,0.8516661,0.1483339,Victoire Dom,3,0,3 - 0
+2026-03-28,Senegal,Peru,Friendly,0.8435491,0.15645093,Victoire Dom,3,0,3 - 0
+2026-03-28,Namibia,Comoros,FIFA Series,0.6243381,0.3756619,Victoire Dom,1,0,1 - 0
+2026-03-28,United States,Belgium,Friendly,0.2830298,0.7169702,Défaite/Nul Dom,0,2,0 - 2
+2026-03-28,Canada,Iceland,Friendly,0.82411855,0.17588145,Victoire Dom,2,0,2 - 0
+2026-03-28,Haiti,Tunisia,Friendly,0.45173702,0.54826295,Match Serré / Nul,1,1,1 - 1
+2026-03-28,Scotland,Japan,Friendly,0.3858956,0.6141044,Défaite/Nul Dom,1,1,1 - 1
+2026-03-29,Aruba,Liechtenstein,FIFA Series,0.936325,0.06367499,Victoire Dom,4,0,4 - 0
+2026-03-29,Armenia,Belarus,Friendly,0.23101838,0.76898164,Défaite/Nul Dom,0,2,0 - 2
+2026-03-29,Lithuania,Georgia,Friendly,0.08557978,0.91442025,Défaite/Nul Dom,0,4,0 - 4
+2026-03-29,Dominican Republic,Cuba,CONCACAF Series,0.7925227,0.20747727,Victoire Dom,2,0,2 - 0
+2026-03-29,Colombia,France,Friendly,0.716479,0.283521,Victoire Dom,1,0,1 - 0
+2026-03-30,Azerbaijan,Sierra Leone,FIFA Series,0.53638786,0.46361214,Match Serré / Nul,1,1,1 - 1
+2026-03-30,Guyana,Belize,CONCACAF Series,0.85643107,0.14356893,Victoire Dom,3,0,3 - 0
+2026-03-30,Uzbekistan,Venezuela,FIFA Series,0.48700938,0.5129906,Match Serré / Nul,1,1,1 - 1
+2026-03-30,Gabon,Trinidad and Tobago,FIFA Series,0.7932327,0.20676732,Victoire Dom,2,0,2 - 0
+2026-03-30,Grenada,Kenya,FIFA Series,0.5741728,0.4258272,Victoire Dom,1,1,1 - 1
+2026-03-30,New Zealand,Chile,FIFA Series,0.25397095,0.746029,Défaite/Nul Dom,0,2,0 - 2
+2026-03-30,Rwanda,Estonia,FIFA Series,0.5615828,0.4384172,Victoire Dom,1,1,1 - 1
+2026-03-30,Indonesia,Bulgaria,FIFA Series,0.33346364,0.66653633,Défaite/Nul Dom,0,1,0 - 1
+2026-03-30,Germany,Ghana,Friendly,0.43787482,0.5621252,Défaite/Nul Dom,1,1,1 - 1
+2026-03-30,Cyprus,Moldova,Friendly,0.6231448,0.3768552,Victoire Dom,1,0,1 - 0
+2026-03-31,Costa Rica,Iran,Friendly,0.46379858,0.5362014,Match Serré / Nul,1,1,1 - 1
+2026-03-31,Brazil,Croatia,Friendly,0.72860724,0.27139276,Victoire Dom,2,0,2 - 0
+2026-03-31,Benin,Guinea,"Morocco, Capital of African Football",0.5121777,0.4878223,Match Serré / Nul,1,1,1 - 1
+2026-03-31,Equatorial Guinea,Madagascar,Friendly,0.8680442,0.1319558,Victoire Dom,3,0,3 - 0
+2026-03-31,Algeria,Uruguay,Friendly,0.505956,0.494044,Match Serré / Nul,1,1,1 - 1
+2026-03-31,Norway,Switzerland,Friendly,0.4381157,0.5618843,Défaite/Nul Dom,1,1,1 - 1
+2026-03-31,Argentina,Zambia,Friendly,0.85506564,0.14493436,Victoire Dom,3,0,3 - 0
+2026-03-31,Canada,Tunisia,Friendly,0.779495,0.220505,Victoire Dom,2,0,2 - 0
+2026-03-31,Netherlands,Ecuador,Friendly,0.6376694,0.36233062,Victoire Dom,1,0,1 - 0
+2026-03-31,Haiti,Iceland,Friendly,0.74918354,0.25081646,Victoire Dom,2,0,2 - 0
+2026-03-31,Morocco,Paraguay,Friendly,0.8102327,0.1897673,Victoire Dom,2,0,2 - 0
+2026-03-31,Montenegro,Slovenia,Friendly,0.117415994,0.882584,Défaite/Nul Dom,0,3,0 - 3
+2026-03-31,Mexico,Belgium,Friendly,0.45936295,0.540637,Match Serré / Nul,1,1,1 - 1
+2026-03-31,Niger,Togo,"Morocco, Capital of African Football",0.2668921,0.7331079,Défaite/Nul Dom,0,2,0 - 2
+2026-03-31,Liberia,Libya,"Morocco, Capital of African Football",0.2914583,0.7085417,Défaite/Nul Dom,0,2,0 - 2
+2026-03-31,Jordan,Nigeria,Friendly,0.53072625,0.46927375,Match Serré / Nul,1,1,1 - 1
+2026-03-31,Ivory Coast,Scotland,Friendly,0.7464566,0.25354338,Victoire Dom,2,0,2 - 0
+2026-03-31,Hungary,Greece,Friendly,0.48768494,0.51231503,Match Serré / Nul,1,1,1 - 1
+2026-03-31,Austria,South Korea,Friendly,0.54238206,0.45761794,Match Serré / Nul,1,1,1 - 1
+2026-03-31,England,Japan,Friendly,0.6703024,0.3296976,Victoire Dom,1,0,1 - 0
+2026-03-31,Wales,Northern Ireland,Friendly,0.5543426,0.44565737,Victoire Dom,1,1,1 - 1
+2026-03-31,Ukraine,Albania,Friendly,0.7361665,0.26383352,Victoire Dom,2,0,2 - 0
+2026-03-31,San Marino,Andorra,Friendly,0.09677217,0.9032278,Défaite/Nul Dom,0,3,0 - 3
+2026-03-31,Senegal,Gambia,Friendly,0.8979706,0.10202938,Victoire Dom,3,0,3 - 0
+2026-03-31,Serbia,Saudi Arabia,Friendly,0.52584445,0.47415555,Match Serré / Nul,1,1,1 - 1
+2026-03-31,Slovakia,Romania,Friendly,0.58399546,0.41600454,Victoire Dom,1,1,1 - 1
+2026-03-31,South Africa,Panama,Friendly,0.34252375,0.65747625,Défaite/Nul Dom,1,1,1 - 1
+2026-03-31,Spain,Egypt,Friendly,0.8134038,0.18659621,Victoire Dom,2,0,2 - 0
+2026-03-31,Cameroon,China,FIFA Series,0.78482735,0.21517265,Victoire Dom,2,0,2 - 0
+2026-03-31,United States,Portugal,Friendly,0.2829457,0.7170543,Défaite/Nul Dom,0,1,0 - 1
+2026-03-31,Iraq,Bolivia,FIFA World Cup qualification,0.80969876,0.19030124,Victoire Dom,2,0,2 - 0
+2026-03-31,Peru,Honduras,Friendly,0.817171,0.18282902,Victoire Dom,2,0,2 - 0
+2026-03-31,Bosnia and Herzegovina,Italy,FIFA World Cup qualification,0.09888203,0.901118,Défaite/Nul Dom,0,3,0 - 3
+2026-03-31,Sweden,Poland,FIFA World Cup qualification,0.19806339,0.8019366,Défaite/Nul Dom,0,2,0 - 2
+2026-03-31,Kosovo,Turkey,FIFA World Cup qualification,0.42685947,0.5731405,Défaite/Nul Dom,1,1,1 - 1
+2026-03-31,Czech Republic,Denmark,FIFA World Cup qualification,0.41515893,0.5848411,Défaite/Nul Dom,1,1,1 - 1
+2026-03-31,Kazakhstan,Comoros,FIFA Series,0.29079822,0.7092018,Défaite/Nul Dom,0,2,0 - 2
+2026-03-31,Russia,Mali,Friendly,0.5666223,0.43337768,Victoire Dom,1,1,1 - 1
+2026-03-31,DR Congo,Jamaica,FIFA World Cup qualification,0.68944013,0.31055987,Victoire Dom,1,0,1 - 0
+2026-05-22,Mexico,Ghana,Friendly,0.685639,0.31436098,Victoire Dom,1,0,1 - 0
+2026-05-26,Nigeria,Zimbabwe,Unity Cup,0.823624,0.17637599,Victoire Dom,2,0,2 - 0
+2026-05-26,Morocco,Burundi,Friendly,0.88938576,0.11061424,Victoire Dom,3,0,3 - 0
+2026-05-27,India,Jamaica,Unity Cup,0.48390236,0.51609766,Match Serré / Nul,1,1,1 - 1
+2026-05-28,Egypt,Russia,Friendly,0.3591202,0.6408798,Défaite/Nul Dom,0,1,0 - 1
+2026-05-29,South Africa,Nicaragua,Friendly,0.72284967,0.27715033,Victoire Dom,2,0,2 - 0
+2026-05-29,Iran,Gambia,Friendly,0.8876943,0.1123057,Victoire Dom,3,0,3 - 0
+2026-05-29,Andorra,Iraq,Friendly,0.052704174,0.94729584,Défaite/Nul Dom,0,4,0 - 4
+2026-05-29,Bosnia and Herzegovina,North Macedonia,Friendly,0.30250752,0.6974925,Défaite/Nul Dom,0,2,0 - 2
+2026-05-30,Ecuador,Saudi Arabia,Friendly,0.776038,0.22396201,Victoire Dom,2,0,2 - 0
+2026-05-30,South Korea,Trinidad and Tobago,Friendly,0.8563136,0.14368641,Victoire Dom,3,0,3 - 0
+2026-05-30,Mexico,Australia,Friendly,0.8765151,0.12348491,Victoire Dom,3,0,3 - 0
+2026-05-30,Zimbabwe,India,Unity Cup,0.66590875,0.33409125,Victoire Dom,1,0,1 - 0
+2026-05-30,Nigeria,Jamaica,Unity Cup,0.7491916,0.25080842,Victoire Dom,2,0,2 - 0
+2026-05-31,Germany,Finland,Friendly,0.8572628,0.14273721,Victoire Dom,3,0,3 - 0
+2026-05-31,Brazil,Panama,Friendly,0.8163956,0.18360442,Victoire Dom,2,0,2 - 0
+2026-05-31,Czech Republic,Kosovo,Friendly,0.536484,0.463516,Match Serré / Nul,1,1,1 - 1
+2026-05-31,United States,Senegal,Friendly,0.4645637,0.5354363,Match Serré / Nul,1,1,1 - 1
+2026-05-31,Japan,Iceland,Friendly,0.8923435,0.10765648,Victoire Dom,3,0,3 - 0
+2026-05-31,Switzerland,Jordan,Friendly,0.8426713,0.15732872,Victoire Dom,3,0,3 - 0
+2026-05-31,Poland,Ukraine,Friendly,0.5039169,0.49608308,Match Serré / Nul,1,1,1 - 1
+2026-06-01,Slovakia,Malta,Friendly,0.803073,0.19692701,Victoire Dom,2,0,2 - 0
+2026-06-01,Austria,Tunisia,Friendly,0.74732286,0.25267714,Victoire Dom,2,0,2 - 0
+2026-06-01,Bulgaria,Montenegro,Friendly,0.47974685,0.5202532,Match Serré / Nul,1,1,1 - 1
+2026-06-01,Canada,Uzbekistan,Friendly,0.7434681,0.2565319,Victoire Dom,2,0,2 - 0
+2026-06-01,Colombia,Costa Rica,Friendly,0.6998829,0.30011708,Victoire Dom,2,0,2 - 0
+2026-06-01,Norway,Sweden,Friendly,0.5123133,0.4876867,Match Serré / Nul,1,1,1 - 1
+2026-06-01,Turkey,North Macedonia,Friendly,0.52363354,0.47636646,Match Serré / Nul,1,1,1 - 1
+2026-06-02,Haiti,New Zealand,Friendly,0.53436196,0.46563804,Match Serré / Nul,1,1,1 - 1
+2026-06-02,Croatia,Belgium,Friendly,0.40312752,0.59687245,Défaite/Nul Dom,1,1,1 - 1
+2026-06-02,Morocco,Madagascar,Friendly,0.9127071,0.08729291,Victoire Dom,4,0,4 - 0
+2026-06-02,Georgia,Romania,Friendly,0.48883188,0.5111681,Match Serré / Nul,1,1,1 - 1
+2026-06-02,Wales,Ghana,Friendly,0.50378215,0.49621785,Match Serré / Nul,1,1,1 - 1
+2026-06-03,Poland,Nigeria,Friendly,0.44985846,0.5501416,Défaite/Nul Dom,1,1,1 - 1
+2026-06-03,Albania,Israel,Friendly,0.5615863,0.43841368,Victoire Dom,1,1,1 - 1
+2026-06-03,DR Congo,Denmark,Friendly,0.48002583,0.5199742,Match Serré / Nul,1,1,1 - 1
+2026-06-03,South Korea,El Salvador,Friendly,0.9104932,0.089506805,Victoire Dom,3,0,3 - 0
+2026-06-03,Luxembourg,Italy,Friendly,0.047638673,0.95236135,Défaite/Nul Dom,0,5,0 - 5
+2026-06-03,Netherlands,Algeria,Friendly,0.7560126,0.24398738,Victoire Dom,2,0,2 - 0
+2026-06-03,Panama,Dominican Republic,Friendly,0.8332231,0.1667769,Victoire Dom,2,0,2 - 0
+2026-06-03,Philippines,Guam,Friendly,0.8554043,0.14459568,Victoire Dom,3,0,3 - 0
+2026-06-04,Andorra,Liechtenstein,Friendly,0.79383713,0.20616287,Victoire Dom,2,0,2 - 0
+2026-06-04,France,Ivory Coast,Friendly,0.70275587,0.29724413,Victoire Dom,1,0,1 - 0
+2026-06-04,Guatemala,Czech Republic,Friendly,0.52331716,0.47668284,Match Serré / Nul,1,1,1 - 1
+2026-06-04,Cambodia,Bhutan,Friendly,0.81519544,0.18480456,Victoire Dom,2,0,2 - 0
+2026-06-04,Mexico,Serbia,Friendly,0.73269624,0.26730376,Victoire Dom,2,0,2 - 0
+2026-06-04,Northern Ireland,Guinea,Friendly,0.56173664,0.43826336,Victoire Dom,1,1,1 - 1
+2026-06-04,Iran,Mali,Friendly,0.8437129,0.15628707,Victoire Dom,2,0,2 - 0
+2026-06-04,Spain,Iraq,Friendly,0.9127519,0.08724809,Victoire Dom,4,0,4 - 0
+2026-06-04,Slovenia,Cyprus,Friendly,0.79206634,0.20793366,Victoire Dom,2,0,2 - 0
+2026-06-04,Sweden,Greece,Friendly,0.4427155,0.5572845,Défaite/Nul Dom,1,1,1 - 1
+2026-06-05,Moldova,Bulgaria,Friendly,0.3754452,0.6245548,Défaite/Nul Dom,0,1,0 - 1
+2026-06-05,Paraguay,Nicaragua,Friendly,0.931776,0.06822401,Victoire Dom,4,0,4 - 0
+2026-06-05,Angola,Mauritania,Friendly,0.78018844,0.21981156,Victoire Dom,2,0,2 - 0
+2026-06-05,Belarus,Syria,Friendly,0.44092315,0.55907685,Défaite/Nul Dom,1,1,1 - 1
+2026-06-05,Georgia,Bahrain,Friendly,0.70905447,0.29094553,Victoire Dom,2,0,2 - 0
+2026-06-05,Hungary,Finland,Friendly,0.67167866,0.32832134,Victoire Dom,1,0,1 - 0
+2026-06-05,Indonesia,Oman,Friendly,0.115938455,0.8840616,Défaite/Nul Dom,0,4,0 - 4
+2026-06-05,Azerbaijan,Malta,Friendly,0.67998433,0.32001567,Victoire Dom,1,0,1 - 0
+2026-06-05,Haiti,Peru,Friendly,0.38878274,0.61121726,Défaite/Nul Dom,1,1,1 - 1
+2026-06-05,Singapore,China,Friendly,0.3252578,0.6747422,Défaite/Nul Dom,0,1,0 - 1
+2026-06-05,Puerto Rico,Saudi Arabia,Friendly,0.3095047,0.6904953,Défaite/Nul Dom,0,1,0 - 1
+2026-06-05,Central African Republic,Togo,Friendly,0.6198497,0.38015032,Victoire Dom,1,0,1 - 0
+2026-06-05,Benin,Niger,Friendly,0.81624025,0.18375975,Victoire Dom,2,0,2 - 0
+2026-06-05,Thailand,Kuwait,Friendly,0.38904557,0.6109544,Défaite/Nul Dom,1,1,1 - 1
+2026-06-05,Tajikistan,India,Friendly,0.7621519,0.2378481,Victoire Dom,2,0,2 - 0
+2026-06-05,Russia,Burkina Faso,Friendly,0.60806656,0.39193344,Victoire Dom,1,0,1 - 0
+2026-06-05,Slovakia,Montenegro,Friendly,0.7077391,0.2922609,Victoire Dom,1,0,1 - 0
+2026-06-06,Albania,Luxembourg,Friendly,0.72721595,0.27278405,Victoire Dom,1,0,1 - 0
+2026-06-06,Armenia,Kazakhstan,Friendly,0.5709762,0.4290238,Victoire Dom,1,1,1 - 1
+2026-06-06,Argentina,Honduras,Friendly,0.8631145,0.13688552,Victoire Dom,3,0,3 - 0
+2026-06-06,Australia,Switzerland,Friendly,0.39487034,0.60512966,Défaite/Nul Dom,1,1,1 - 1
+2026-06-06,Portugal,Chile,Friendly,0.64801264,0.35198736,Victoire Dom,1,1,1 - 1
+2026-06-06,Brazil,Egypt,Friendly,0.8539767,0.14602327,Victoire Dom,3,0,3 - 0
+2026-06-06,England,New Zealand,Friendly,0.9627348,0.03726518,Victoire Dom,4,0,4 - 0
+2026-06-06,Belgium,Tunisia,Friendly,0.79344296,0.20655704,Victoire Dom,2,0,2 - 0
+2026-06-06,Vanuatu,Fiji,Friendly,0.7468679,0.2531321,Victoire Dom,2,0,2 - 0
+2026-06-06,Bolivia,Scotland,Friendly,0.38407958,0.6159204,Défaite/Nul Dom,1,1,1 - 1
+2026-06-06,Ethiopia,Malawi,Friendly,0.56255287,0.43744713,Victoire Dom,1,1,1 - 1
+2026-06-06,Qatar,El Salvador,Friendly,0.8632639,0.1367361,Victoire Dom,3,0,3 - 0
+2026-06-06,Panama,Bosnia and Herzegovina,Friendly,0.7791351,0.22086489,Victoire Dom,2,0,2 - 0
+2026-06-06,United States,Germany,Friendly,0.2674129,0.7325871,Défaite/Nul Dom,0,2,0 - 2
+2026-06-06,Lithuania,Latvia,Baltic Cup,0.3464776,0.6535224,Défaite/Nul Dom,0,1,0 - 1
+2026-06-06,Venezuela,Turkey,Friendly,0.6456152,0.35438478,Victoire Dom,1,0,1 - 0
+2026-06-06,Jamaica,South Africa,Friendly,0.72062016,0.27937984,Victoire Dom,2,0,2 - 0
+2026-06-06,Romania,Wales,Friendly,0.28943172,0.7105683,Défaite/Nul Dom,0,1,0 - 1
+2026-06-06,Estonia,Faroe Islands,Baltic Cup,0.37581348,0.6241865,Défaite/Nul Dom,0,1,0 - 1
+2026-06-06,Kyrgyzstan,Palestine,Friendly,0.39180765,0.6081923,Défaite/Nul Dom,1,1,1 - 1
+2026-06-06,Sierra Leone,Liberia,Friendly,0.5472123,0.4527877,Match Serré / Nul,1,1,1 - 1
+2026-06-07,Greece,Italy,Friendly,0.26535687,0.7346431,Défaite/Nul Dom,0,2,0 - 2
+2026-06-07,Afghanistan,Pakistan,Diamond Jubilee International Football Tournament,0.87005603,0.12994397,Victoire Dom,3,0,3 - 0
+2026-06-07,Croatia,Slovenia,Friendly,0.6667047,0.3332953,Victoire Dom,1,0,1 - 0
+2026-06-07,Ecuador,Guatemala,Friendly,0.8385508,0.1614492,Victoire Dom,2,0,2 - 0
+2026-06-07,Jordan,Colombia,Friendly,0.61275166,0.38724834,Victoire Dom,1,1,1 - 1
+2026-06-07,Morocco,Norway,Friendly,0.6357953,0.3642047,Victoire Dom,1,0,1 - 0
+2026-06-07,Denmark,Ukraine,Friendly,0.7829064,0.21709359,Victoire Dom,2,0,2 - 0
+2026-06-07,Liechtenstein,Cyprus,Friendly,0.1652753,0.83472466,Défaite/Nul Dom,0,3,0 - 3
+2026-06-07,Kosovo,Andorra,Friendly,0.9268284,0.073171616,Victoire Dom,4,0,4 - 0
+2026-06-08,France,Northern Ireland,Friendly,0.8915652,0.1084348,Victoire Dom,3,0,3 - 0
+2026-06-08,Netherlands,Uzbekistan,Friendly,0.83159834,0.16840166,Victoire Dom,2,0,2 - 0
+2026-06-08,Peru,Spain,Friendly,0.42785203,0.57214797,Défaite/Nul Dom,1,1,1 - 1
+2026-06-08,Mauritania,Niger,Friendly,0.5502145,0.44978547,Victoire Dom,1,1,1 - 1
+2026-06-09,Azerbaijan,San Marino,Friendly,0.9887466,0.011253417,Victoire Dom,5,0,5 - 0
+2026-06-09,Hungary,Kazakhstan,Friendly,0.83314735,0.16685265,Victoire Dom,2,0,2 - 0
+2026-06-09,Argentina,Iceland,Friendly,0.9559433,0.044056714,Victoire Dom,5,0,5 - 0
+2026-06-09,Belarus,Burkina Faso,Friendly,0.322839,0.677161,Défaite/Nul Dom,0,2,0 - 2
+2026-06-09,Indonesia,Mozambique,Friendly,0.3486923,0.6513077,Défaite/Nul Dom,0,1,0 - 1
+2026-06-09,China,Thailand,Friendly,0.4773869,0.5226131,Match Serré / Nul,1,1,1 - 1
+2026-06-09,DR Congo,Chile,Friendly,0.6536131,0.3463869,Victoire Dom,1,0,1 - 0
+2026-06-09,Equatorial Guinea,Comoros,Friendly,0.8315195,0.16848052,Victoire Dom,3,0,3 - 0
+2026-06-09,Cambodia,Hong Kong,Friendly,0.24670942,0.7532906,Défaite/Nul Dom,0,2,0 - 2
+2026-06-09,Angola,Central African Republic,Friendly,0.87159157,0.12840843,Victoire Dom,3,0,3 - 0
+2026-06-09,Ethiopia,Malawi,Friendly,0.56255287,0.43744713,Victoire Dom,1,1,1 - 1
+2026-06-09,Iraq,Venezuela,Friendly,0.62778324,0.37221676,Victoire Dom,1,1,1 - 1
+2026-06-09,Estonia,Lithuania,Baltic Cup,0.39461526,0.6053847,Défaite/Nul Dom,1,1,1 - 1
+2026-06-09,Kyrgyzstan,Palestine,Friendly,0.39180765,0.6081923,Défaite/Nul Dom,1,1,1 - 1
+2026-06-09,Saudi Arabia,Senegal,Friendly,0.5427119,0.4572881,Match Serré / Nul,1,1,1 - 1
+2026-06-09,Tajikistan,India,Friendly,0.7621519,0.2378481,Victoire Dom,2,0,2 - 0
+2026-06-09,Latvia,Faroe Islands,Baltic Cup,0.43096262,0.5690374,Défaite/Nul Dom,1,1,1 - 1
+2026-06-09,Armenia,Moldova,Friendly,0.51352805,0.48647195,Match Serré / Nul,1,1,1 - 1
+2026-06-09,Russia,Trinidad and Tobago,Friendly,0.81254965,0.18745035,Victoire Dom,2,0,2 - 0
+2026-06-09,Togo,Benin,Friendly,0.52360404,0.47639596,Match Serré / Nul,1,1,1 - 1
+2026-06-09,Liberia,Sierra Leone,Friendly,0.59598213,0.40401787,Victoire Dom,1,1,1 - 1
+2026-06-10,Bolivia,Algeria,Friendly,0.36563408,0.6343659,Défaite/Nul Dom,1,1,1 - 1
+2026-06-10,England,Costa Rica,Friendly,0.91217434,0.087825656,Victoire Dom,4,0,4 - 0
+2026-06-10,Portugal,Nigeria,Friendly,0.50153255,0.49846745,Match Serré / Nul,1,1,1 - 1
+2026-06-10,Afghanistan,Pakistan,Diamond Jubilee International Football Tournament,0.87005603,0.12994397,Victoire Dom,3,0,3 - 0
+2026-06-11,Mexico,South Africa,FIFA World Cup,0.8322128,0.1677872,Victoire Dom,2,0,2 - 0
+2026-06-11,South Korea,Czech Republic,FIFA World Cup,0.6275854,0.3724146,Victoire Dom,1,1,1 - 1
+2026-06-12,United States,Paraguay,FIFA World Cup,0.52229196,0.47770804,Match Serré / Nul,1,1,1 - 1
+2026-06-12,Canada,Bosnia and Herzegovina,FIFA World Cup,0.78192496,0.21807504,Victoire Dom,2,0,2 - 0
+2026-06-13,Qatar,Switzerland,FIFA World Cup,0.36398748,0.63601255,Défaite/Nul Dom,1,1,1 - 1
+2026-06-13,Brazil,Morocco,FIFA World Cup,0.7738077,0.2261923,Victoire Dom,2,0,2 - 0
+2026-06-13,Haiti,Scotland,FIFA World Cup,0.6108827,0.3891173,Victoire Dom,1,1,1 - 1
+2026-06-13,Australia,Turkey,FIFA World Cup,0.771096,0.22890401,Victoire Dom,2,0,2 - 0
+2026-06-14,Ivory Coast,Ecuador,FIFA World Cup,0.6788756,0.32112437,Victoire Dom,1,0,1 - 0
+2026-06-14,Netherlands,Japan,FIFA World Cup,0.80232084,0.19767916,Victoire Dom,2,0,2 - 0
+2026-06-14,Sweden,Tunisia,FIFA World Cup,0.7924344,0.2075656,Victoire Dom,2,0,2 - 0
+2026-06-15,Belgium,Egypt,FIFA World Cup,0.88250405,0.117495954,Victoire Dom,3,0,3 - 0
+2026-06-15,Iran,New Zealand,FIFA World Cup,0.82790846,0.17209154,Victoire Dom,2,0,2 - 0
+2026-06-15,Saudi Arabia,Uruguay,FIFA World Cup,0.4514699,0.5485301,Match Serré / Nul,1,1,1 - 1
+2026-06-16,Austria,Jordan,FIFA World Cup,0.92667943,0.07332057,Victoire Dom,4,0,4 - 0
+2026-06-16,Argentina,Algeria,FIFA World Cup,0.76588416,0.23411584,Victoire Dom,2,0,2 - 0
+2026-06-16,France,Senegal,FIFA World Cup,0.6858783,0.31412172,Victoire Dom,1,0,1 - 0
+2026-06-16,Iraq,Norway,FIFA World Cup,0.67738783,0.32261217,Victoire Dom,1,0,1 - 0
+2026-06-17,Ghana,Panama,FIFA World Cup,0.5719768,0.42802322,Victoire Dom,1,1,1 - 1
+2026-06-17,England,Croatia,FIFA World Cup,0.7184291,0.2815709,Victoire Dom,2,0,2 - 0
+2026-06-17,Uzbekistan,Colombia,FIFA World Cup,0.71395993,0.28604007,Victoire Dom,2,0,2 - 0
+2026-06-17,Portugal,DR Congo,FIFA World Cup,0.7900145,0.2099855,Victoire Dom,2,0,2 - 0
+2026-06-18,Canada,Qatar,FIFA World Cup,0.89839196,0.10160804,Victoire Dom,4,0,4 - 0
+2026-06-18,Switzerland,Bosnia and Herzegovina,FIFA World Cup,0.9123052,0.087694824,Victoire Dom,4,0,4 - 0
+2026-06-18,Czech Republic,South Africa,FIFA World Cup,0.81199735,0.18800265,Victoire Dom,2,0,2 - 0
+2026-06-18,Mexico,South Korea,FIFA World Cup,0.53191173,0.46808827,Match Serré / Nul,1,1,1 - 1
+2026-06-19,Scotland,Morocco,FIFA World Cup,0.46766722,0.5323328,Match Serré / Nul,1,1,1 - 1
+2026-06-19,Brazil,Haiti,FIFA World Cup,0.8922073,0.107792675,Victoire Dom,3,0,3 - 0
+2026-06-19,United States,Australia,FIFA World Cup,0.6614059,0.33859408,Victoire Dom,1,0,1 - 0
+2026-06-19,Turkey,Paraguay,FIFA World Cup,0.7103924,0.28960758,Victoire Dom,2,0,2 - 0
+2026-06-20,Germany,Ivory Coast,FIFA World Cup,0.64360327,0.35639673,Victoire Dom,1,1,1 - 1
+2026-06-20,Netherlands,Sweden,FIFA World Cup,0.8638974,0.13610262,Victoire Dom,3,0,3 - 0
+2026-06-20,Tunisia,Japan,FIFA World Cup,0.6146936,0.38530642,Victoire Dom,1,1,1 - 1
+2026-06-21,Spain,Saudi Arabia,FIFA World Cup,0.843099,0.156901,Victoire Dom,2,0,2 - 0
+2026-06-21,Belgium,Iran,FIFA World Cup,0.932093,0.067906976,Victoire Dom,4,0,4 - 0
+2026-06-21,New Zealand,Egypt,FIFA World Cup,0.53632283,0.46367717,Match Serré / Nul,1,1,1 - 1
+2026-06-22,Jordan,Algeria,FIFA World Cup,0.5319955,0.46800452,Match Serré / Nul,1,1,1 - 1
+2026-06-22,France,Iraq,FIFA World Cup,0.90707284,0.09292716,Victoire Dom,4,0,4 - 0
+2026-06-22,Norway,Senegal,FIFA World Cup,0.74963236,0.25036764,Victoire Dom,2,0,2 - 0
+2026-06-22,Argentina,Austria,FIFA World Cup,0.7363894,0.2636106,Victoire Dom,2,0,2 - 0
+2026-06-23,Panama,Croatia,FIFA World Cup,0.59984136,0.40015864,Victoire Dom,1,1,1 - 1
+2026-06-23,England,Ghana,FIFA World Cup,0.7609683,0.23903167,Victoire Dom,2,0,2 - 0
+2026-06-23,Portugal,Uzbekistan,FIFA World Cup,0.90990007,0.09009993,Victoire Dom,4,0,4 - 0
+2026-06-23,Colombia,DR Congo,FIFA World Cup,0.83546025,0.16453975,Victoire Dom,3,0,3 - 0
+2026-06-24,Morocco,Haiti,FIFA World Cup,0.88260704,0.11739296,Victoire Dom,3,0,3 - 0
+2026-06-24,Bosnia and Herzegovina,Qatar,FIFA World Cup,0.8590504,0.1409496,Victoire Dom,3,0,3 - 0
+2026-06-24,Scotland,Brazil,FIFA World Cup,0.68633384,0.31366616,Victoire Dom,1,0,1 - 0
+2026-06-24,South Africa,South Korea,FIFA World Cup,0.56561595,0.43438405,Victoire Dom,1,1,1 - 1
+2026-06-24,Mexico,Czech Republic,FIFA World Cup,0.70061165,0.29938835,Victoire Dom,2,0,2 - 0
+2026-06-24,Canada,Switzerland,FIFA World Cup,0.45221952,0.5477805,Match Serré / Nul,1,1,1 - 1
+2026-06-25,Tunisia,Netherlands,FIFA World Cup,0.66423774,0.33576226,Victoire Dom,1,0,1 - 0
+2026-06-25,Japan,Sweden,FIFA World Cup,0.89218956,0.10781044,Victoire Dom,3,0,3 - 0
+2026-06-25,Paraguay,Australia,FIFA World Cup,0.8499783,0.15002167,Victoire Dom,3,0,3 - 0
+2026-06-25,United States,Turkey,FIFA World Cup,0.5817517,0.4182483,Victoire Dom,1,1,1 - 1
+2026-06-25,Ecuador,Germany,FIFA World Cup,0.7170783,0.28292167,Victoire Dom,1,0,1 - 0
+2026-06-26,Norway,France,FIFA World Cup,0.62156636,0.37843364,Victoire Dom,1,1,1 - 1
+2026-06-26,Egypt,Iran,FIFA World Cup,0.6211183,0.3788817,Victoire Dom,1,0,1 - 0
+2026-06-26,New Zealand,Belgium,FIFA World Cup,0.45852047,0.5414795,Match Serré / Nul,1,1,1 - 1
+2026-06-26,Uruguay,Spain,FIFA World Cup,0.46768898,0.532311,Match Serré / Nul,1,1,1 - 1
+2026-06-26,Senegal,Iraq,FIFA World Cup,0.8329014,0.16709858,Victoire Dom,2,0,2 - 0
+2026-06-27,Algeria,Austria,FIFA World Cup,0.49375808,0.5062419,Match Serré / Nul,1,1,1 - 1
+2026-06-27,Panama,England,FIFA World Cup,0.7098959,0.2901041,Victoire Dom,2,0,2 - 0
+2026-06-27,Jordan,Argentina,FIFA World Cup,0.40257913,0.5974209,Défaite/Nul Dom,1,1,1 - 1
+2026-06-27,DR Congo,Uzbekistan,FIFA World Cup,0.6540033,0.34599668,Victoire Dom,1,0,1 - 0
+2026-06-27,Colombia,Portugal,FIFA World Cup,0.7034632,0.2965368,Victoire Dom,2,0,2 - 0
+2026-06-27,Croatia,Ghana,FIFA World Cup,0.6881941,0.3118059,Victoire Dom,1,0,1 - 0
