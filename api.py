@@ -1,4 +1,6 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 import numpy as np
@@ -36,8 +38,6 @@ app = FastAPI(
     description="API de prédiction de matchs basée sur un réseau de neurones et Monte Carlo.",
     version="1.0"
 )
-
-from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
@@ -127,13 +127,236 @@ def simuler_score(p_win, att_home, def_away, att_away, def_home):
     return max(set(scores), key=scores.count)
 
 # ==========================================
-# 5. ENDPOINT DE PRÉDICTION
+# 5. ENDPOINTS
 # ==========================================
+
+@app.get("/", response_class=HTMLResponse)
+def home():
+    """Interface visuelle interactive pour tester le modèle directement depuis le navigateur."""
+    return """<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup 2026 AI Predictor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <span class="text-3xl">⚽</span>
+                <div>
+                    <h1 class="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                        World Cup 2026 AI Predictor
+                    </h1>
+                    <p class="text-xs text-slate-400">Réseau de neurones PyTorch & Simulations Monte Carlo</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="/docs" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-blue-400 px-3 py-1.5 rounded-lg border border-slate-700 transition">
+                    📖 Swagger Docs (/docs)
+                </a>
+                <a href="/redoc" target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-400 px-3 py-1.5 rounded-lg border border-slate-700 transition">
+                    📑 ReDoc (/redoc)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-8 flex-1 w-full">
+        <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6 shadow-xl backdrop-blur">
+            <h2 class="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2">
+                <span>🎯</span> Simulation d'un Match
+            </h2>
+
+            <form id="predict-form" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                            Équipe Domicile (Home)
+                        </label>
+                        <select id="team_home" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-blue-500 transition">
+                            <option value="">Chargement des équipes...</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                            Équipe Extérieur (Away)
+                        </label>
+                        <select id="team_away" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-blue-500 transition">
+                            <option value="">Chargement des équipes...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-6 pt-2">
+                    <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                        <input type="checkbox" id="is_neutral" checked class="w-4 h-4 rounded text-blue-600 bg-slate-900 border-slate-700 focus:ring-blue-500">
+                        <span>Terrain Neutre (Coupe du Monde)</span>
+                    </label>
+                    <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                        <input type="checkbox" id="is_world_cup" checked class="w-4 h-4 rounded text-blue-600 bg-slate-900 border-slate-700 focus:ring-blue-500">
+                        <span>Contexte Coupe du Monde</span>
+                    </label>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition transform active:scale-[0.99] flex items-center justify-center gap-2">
+                    <span>⚡</span> <span>Calculer la prédiction</span>
+                </button>
+            </form>
+
+            <!-- Result Card -->
+            <div id="result-container" class="mt-8 hidden">
+                <div class="border-t border-slate-700 pt-6">
+                    <div class="text-center mb-6">
+                        <span class="text-xs uppercase tracking-wider text-slate-400 font-bold" id="match-title">Match</span>
+                        <div class="text-4xl font-black text-white mt-2" id="score-predit">0 - 0</div>
+                        <p class="text-xs text-slate-400 mt-1">Score exact le plus probable (Monte Carlo Poisson)</p>
+                    </div>
+
+                    <!-- Probabilities Gauge -->
+                    <div class="space-y-4 bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-1">
+                                <span class="text-blue-400">Victoire <span id="home-name">Domicile</span></span>
+                                <span id="proba-home" class="text-blue-400">50%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                                <div id="bar-home" class="bg-blue-500 h-3 rounded-full transition-all duration-500" style="width: 50%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-1">
+                                <span class="text-slate-400">Nul ou Défaite Domicile</span>
+                                <span id="proba-away" class="text-slate-400">50%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                                <div id="bar-away" class="bg-emerald-500 h-3 rounded-full transition-all duration-500" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error container -->
+            <div id="error-container" class="mt-6 hidden bg-red-900/30 border border-red-700/50 text-red-300 p-4 rounded-xl text-sm">
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-800 py-4 text-center text-xs text-slate-500">
+        World Cup 2026 Match Predictor • FastAPI & PyTorch
+    </footer>
+
+    <script>
+        async function loadTeams() {
+            try {
+                const res = await fetch('/teams');
+                const data = await res.json();
+                const teams = data.teams || [];
+                const homeSelect = document.getElementById('team_home');
+                const awaySelect = document.getElementById('team_away');
+                homeSelect.innerHTML = '';
+                awaySelect.innerHTML = '';
+                teams.forEach(team => {
+                    const opt1 = document.createElement('option');
+                    opt1.value = team;
+                    opt1.textContent = team;
+                    if (team === 'France') opt1.selected = true;
+                    homeSelect.appendChild(opt1);
+
+                    const opt2 = document.createElement('option');
+                    opt2.value = team;
+                    opt2.textContent = team;
+                    if (team === 'Brazil') opt2.selected = true;
+                    awaySelect.appendChild(opt2);
+                });
+            } catch (err) {
+                console.error('Erreur chargement équipes:', err);
+            }
+        }
+
+        document.getElementById('predict-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const resContainer = document.getElementById('result-container');
+            const errContainer = document.getElementById('error-container');
+            errContainer.classList.add('hidden');
+            resContainer.classList.add('hidden');
+            btn.disabled = true;
+            btn.innerHTML = '<span>⏳</span> <span>Calcul en cours...</span>';
+
+            const payload = {
+                team_home: document.getElementById('team_home').value,
+                team_away: document.getElementById('team_away').value,
+                is_neutral: document.getElementById('is_neutral').checked ? 1.0 : 0.0,
+                is_world_cup: document.getElementById('is_world_cup').checked ? 1.0 : 0.0
+            };
+
+            try {
+                const res = await fetch('/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (!res.ok) {
+                    throw new Error(data.detail || 'Erreur lors de la prédiction');
+                }
+
+                document.getElementById('match-title').textContent = data.match;
+                document.getElementById('score-predit').textContent = data.score_predit;
+                document.getElementById('home-name').textContent = payload.team_home;
+                document.getElementById('proba-home').textContent = data.proba_victoire_home + '%';
+                document.getElementById('proba-away').textContent = data.proba_nul_ou_defaite + '%';
+                document.getElementById('bar-home').style.width = data.proba_victoire_home + '%';
+                document.getElementById('bar-away').style.width = data.proba_nul_ou_defaite + '%';
+                resContainer.classList.remove('hidden');
+            } catch (err) {
+                errContainer.textContent = err.message;
+                errContainer.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>⚡</span> <span>Calculer la prédiction</span>';
+            }
+        });
+
+        loadTeams();
+    </script>
+</body>
+</html>
+"""
+
+@app.get("/teams")
+def get_teams():
+    """Retourne la liste alphabétique des équipes disponibles dans la base de données."""
+    if df_derniere_stats is None:
+        raise HTTPException(status_code=503, detail="Le modèle n'est pas encore initialisé.")
+    return {"teams": sorted(list(df_derniere_stats.index))}
+
+@app.get("/health")
+def health_check():
+    """Vérification de l'état de l'API."""
+    return {
+        "status": "ok",
+        "model_loaded": model is not None,
+        "total_teams": len(df_derniere_stats.index) if df_derniere_stats is not None else 0
+    }
+
 @app.post("/predict")
 def predict_match(request: MatchRequest):
     t_home = request.team_home
     t_away = request.team_away
     
+    if df_derniere_stats is None or model is None:
+        raise HTTPException(status_code=503, detail="Le modèle n'est pas encore chargé.")
+
     if t_home not in df_derniere_stats.index or t_away not in df_derniere_stats.index:
         raise HTTPException(status_code=404, detail="Une ou les deux équipes sont introuvables dans la base de données historique.")
 
