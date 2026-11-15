@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPPredictor — Moteur d'Inférence Statistique Coupe du Monde 2026</title>
+    <style>
+        :root {
+            --bg-primary: #0a0c10;
+            --bg-surface: #11141b;
+            --bg-subtle: #171b24;
+            --border-subtle: #232836;
+            --border-strong: #343c50;
+            --text-main: #edf0f5;
+            --text-muted: #8c95a8;
+            --text-dim: #545d72;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-subtle: rgba(37, 99, 235, 0.12);
+            --win-color: #3b82f6;
+            --draw-color: #64748b;
+            --radius: 4px;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Consolas, monospace;
+            --transition-fast: 150ms ease-out;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* En-tête */
+        header {
+            border-bottom: 1px solid var(--border-subtle);
+            background-color: var(--bg-primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .brand {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-tag {
+            color: var(--text-dim);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            padding: 0.35rem 0.6rem;
+            border-radius: var(--radius);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+            background-color: var(--bg-subtle);
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #10b981;
+            margin-right: 0.4rem;
+        }
+
+        /* Rythme des sections et espaces négatifs */
+        .section-separator {
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .section-spacer {
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+        }
+
+        /* Hero asymétrique */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 960px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+        }
+
+        .meta-index {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        h1.hero-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            margin-bottom: 1.75rem;
+        }
+
+        @media (max-width: 640px) {
+            h1.hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 580px;
+            margin-bottom: 3rem;
+        }
+
+        /* Liste technique asymétrique */
+        .spec-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 2rem;
+            max-width: 580px;
+        }
+
+        .spec-item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .spec-label {
+            font-family: var(--font-mono);
+            color: var(--text-dim);
+        }
+
+        .spec-value {
+            color: var(--text-muted);
+        }
+
+        /* Formulaire de prédiction */
+        .form-panel {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+        }
+
+        .panel-heading {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            color: var(--text-dim);
+            margin-bottom: 1.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label.field-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.04em;
+        }
+
+        select.field-select {
+            width: 100%;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            color: var(--text-main);
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color var(--transition-fast);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238c95a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        select.field-select:focus {
+            border-color: var(--accent);
+        }
+
+        .options-group {
+            margin: 1.75rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            border: 1px solid var(--border-strong);
+            background-color: var(--bg-primary);
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+
+        .action-button {
+            width: 100%;
+            background-color: var(--accent);
+            color: #ffffff;
+            border: 1px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 0.9rem 1.25rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-fast), border-color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .action-button:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        .action-button:active {
+            opacity: 0.9;
+        }
+
+        .action-button:disabled {
+            background-color: var(--bg-subtle);
+            border-color: var(--border-subtle);
+            color: var(--text-dim);
+            cursor: not-allowed;
+        }
+
+        /* Rapport de simulation */
+        #result-section {
+            display: none;
+            margin-top: 4rem;
+        }
+
+        .report-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: gap;
+        }
+
+        .report-title {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            margin-bottom: 0.35rem;
+        }
+
+        .report-match {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .score-display {
+            font-family: var(--font-mono);
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+        }
+
+        .probability-split {
+            margin: 2.5rem 0;
+        }
+
+        .prob-bar-container {
+            display: flex;
+            height: 12px;
+            background-color: var(--bg-subtle);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+
+        .prob-bar-home {
+            background-color: var(--win-color);
+            transition: width var(--transition-fast);
+        }
+
+        .prob-bar-away {
+            background-color: var(--draw-color);
+            transition: width var(--transition-fast);
+        }
+
+        .prob-legend {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+        }
+
+        .legend-home {
+            color: var(--win-color);
+        }
+
+        .legend-away {
+            color: var(--text-muted);
+        }
+
+        /* Tableau éditorial pleine largeur */
+        .editorial-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            background-color: var(--bg-surface);
+        }
+
+        table.editorial-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            text-align: left;
+        }
+
+        table.editorial-table th {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            letter-spacing: 0.06em;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-subtle);
+            background-color: var(--bg-subtle);
+            font-weight: 600;
+        }
+
+        table.editorial-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        table.editorial-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.editorial-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.015);
+            color: var(--text-main);
+        }
+
+        .mono-cell {
+            font-family: var(--font-mono);
+            color: var(--text-main);
+        }
+
+        /* Section titres éditoriaux */
+        .section-header {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-index {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            max-width: 680px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Intégration programmatique / cURL */
+        .api-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 860px) {
+            .api-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .code-block {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        .code-title {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* Pied de page */
+        footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 4rem 0;
+            background-color: var(--bg-primary);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+        }
+
+        .error-message {
+            display: none;
+            padding: 1rem;
+            background-color: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-radius: var(--radius);
+            color: #f87171;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="container nav-inner">
+            <div class="brand">
+                <span>MPPREDICTOR</span>
+                <span class="brand-tag">// 2026-WC-ENGINE</span>
+            </div>
+            <nav class="nav-links">
+                <span><span class="status-dot"></span>Service actif</span>
+                <a href="/docs" target="_blank">Documentation OpenAPI</a>
+                <a href="/health" target="_blank">Santé API</a>
+                <a href="https://github.com/444Atlas/MPPredictor" target="_blank">Dépôt GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section 01 : Hero asymétrique & formulaire -->
+    <section class="section-spacer">
+        <div class="container">
+            <div class="hero-grid">
+                
+                <!-- Colonne éditoriale gauche -->
+                <div>
+                    <span class="meta-index">01 / MOTEUR D'INFÉRENCE & PRÉDICTION</span>
+                    <h1 class="hero-title">Modélisation probabiliste des confrontations internationales.</h1>
+                    <p class="hero-description">
+                        Évaluation quantitative des probabilités de match pour la Coupe du Monde 2026. L'architecture associe un réseau de neurones multicouches (PyTorch) entraîné sur dix années de résultats officiels et un modèle bivarié de Poisson pour la calibration dynamique des scores exacts.
+                    </p>
+
+                    <ul class="spec-list">
+                        <li class="spec-item">
+                            <span class="spec-label">Échantillon</span>
+                            <span class="spec-value">8 281 matchs internationaux traités (2016–2026).</span>
+                        </li>
+                        <li class="spec-item">
+                            <span class="spec-label">Descripteurs</span>
+                            <span class="spec-value">29 variables composites (ELO dynamique, notes FIFA, ratios d'attaque/défense, forme récente).</span>
+                        </li>
+                        <li class="spec-item">
+                            <span class="spec-label">Simulation</span>
+                            <span class="spec-value">10 000 tirages de Monte Carlo par confrontation, ajustés par le ratio de force neuronal.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne fonctionnelle droite : Paramétrage -->
+                <div>
+                    <div class="form-panel">
+                        <div class="panel-heading">
+                            <span>PARAMÈTRES DU MATCH</span>
+                            <span id="teams-count">180 sélections</span>
+                        </div>
+
+                        <form id="simulation-form">
+                            <div class="form-group">
+                                <label class="field-label" for="team_home">Équipe A (Domicile / Référence)</label>
+                                <select id="team_home" class="field-select">
+                                    <option value="">Chargement de la base...</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="field-label" for="team_away">Équipe B (Extérieur)</label>
+                                <select id="team_away" class="field-select">
+                                    <option value="">Chargement de la base...</option>
+                                </select>
+                            </div>
+
+                            <div class="options-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="is_neutral" checked>
+                                    <span>Terrain neutre (règle standard Coupe du Monde)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="is_world_cup" checked>
+                                    <span>Pondération tournoi majeur (Coupe du Monde)</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="action-button">
+                                <span>Calculer les probabilités et le score</span>
+                            </button>
+                        </form>
+
+                        <div id="error-container" class="error-message"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Rapport d'inférence (généré dynamiquement) -->
+            <div id="result-section">
+                <div class="report-header">
+                    <div>
+                        <div class="report-title">RAPPORT D'INFÉRENCE STATISTIQUE</div>
+                        <div class="report-match" id="match-label">France vs Brésil</div>
+                    </div>
+                    <div class="score-display" id="score-label">0 — 0</div>
+                </div>
+
+                <div class="probability-split">
+                    <div class="prob-bar-container">
+                        <div id="bar-home" class="prob-bar-home" style="width: 50%;"></div>
+                        <div id="bar-away" class="prob-bar-away" style="width: 50%;"></div>
+                    </div>
+                    <div class="prob-legend">
+                        <span class="legend-home" id="legend-home-text">Victoire Domicile : 50.0%</span>
+                        <span class="legend-away" id="legend-away-text">Nul ou Défaite Domicile : 50.0%</span>
+                    </div>
+                </div>
+
+                <div class="editorial-table-wrap">
+                    <table class="editorial-table">
+                        <thead>
+                            <tr>
+                                <th>INDICATEUR</th>
+                                <th>VALEUR CALCULÉE</th>
+                                <th>INTERPRÉTATION MÉCANIQUE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="mono-cell">Probabilité Victoire Équipe A</td>
+                                <td class="mono-cell" id="metric-pwin">0.00%</td>
+                                <td>Estimation brute en sortie de sigmoïde du réseau PyTorch.</td>
+                            </tr>
+                            <tr>
+                                <td class="mono-cell">Probabilité Nul / Défaite Équipe A</td>
+                                <td class="mono-cell" id="metric-palt">0.00%</td>
+                                <td>Complément à 1 de la distribution binaire du modèle.</td>
+                            </tr>
+                            <tr>
+                                <td class="mono-cell">Score modal (Mode Monte Carlo)</td>
+                                <td class="mono-cell" id="metric-score">0 — 0</td>
+                                <td>Combinaison de buts la plus récurrente sur 10 000 tirages de Poisson bivariés.</td>
+                            </tr>
+                            <tr>
+                                <td class="mono-cell">Volume buts prédit Équipe A / B</td>
+                                <td class="mono-cell" id="metric-goals">0 / 0</td>
+                                <td>Nombre de buts projetés pour chaque formation.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 02 : Tableau éditorial des confrontations indexées -->
+    <section class="section-spacer section-separator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">02 / ÉCHANTILLON DE CALIBRATION</span>
+                <h2 class="section-title">Prédictions extraites du calendrier 2026</h2>
+                <p class="section-desc">
+                    Relevé factuel des simulations calculées par le pipeline sur les rencontres internationales officielles de la saison 2026.
+                </p>
+            </div>
+
+            <div class="editorial-table-wrap">
+                <table class="editorial-table">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>CONFRONTATION</th>
+                            <th>COMPÉTITION</th>
+                            <th>VICTOIRE DOM.</th>
+                            <th>SCORE MODAL</th>
+                            <th>STATUT DU CALCUL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="mono-cell">2026-01-03</td>
+                            <td>Sénégal vs Soudan</td>
+                            <td>African Cup of Nations</td>
+                            <td class="mono-cell">88.46%</td>
+                            <td class="mono-cell">3 — 0</td>
+                            <td>Convergence atteinte (10k itérations)</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-cell">2026-01-03</td>
+                            <td>Mali vs Tunisie</td>
+                            <td>African Cup of Nations</td>
+                            <td class="mono-cell">76.92%</td>
+                            <td class="mono-cell">2 — 0</td>
+                            <td>Convergence atteinte (10k itérations)</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-cell">2026-01-04</td>
+                            <td>Maroc vs Tanzanie</td>
+                            <td>African Cup of Nations</td>
+                            <td class="mono-cell">90.11%</td>
+                            <td class="mono-cell">3 — 0</td>
+                            <td>Convergence atteinte (10k itérations)</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-cell">2026-01-04</td>
+                            <td>Afrique du Sud vs Cameroun</td>
+                            <td>African Cup of Nations</td>
+                            <td class="mono-cell">50.80%</td>
+                            <td class="mono-cell">1 — 1</td>
+                            <td>Convergence atteinte (10k itérations)</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-cell">2026-01-05</td>
+                            <td>Nigéria vs Mozambique</td>
+                            <td>African Cup of Nations</td>
+                            <td class="mono-cell">61.61%</td>
+                            <td class="mono-cell">1 — 1</td>
+                            <td>Convergence atteinte (10k itérations)</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-cell">2026-01-05</td>
+                            <td>Égypte vs Bénin</td>
+                            <td>African Cup of Nations</td>
+                            <td class="mono-cell">84.62%</td>
+                            <td class="mono-cell">3 — 0</td>
+                            <td>Convergence atteinte (10k itérations)</td>
+                        </tr>
+                        <tr>
+                            <td class="mono-cell">2026-01-06</td>
+                            <td>Côte d'Ivoire vs Burkina Faso</td>
+                            <td>African Cup of Nations</td>
+                            <td class="mono-cell">71.09%</td>
+                            <td class="mono-cell">2 — 0</td>
+                            <td>Convergence atteinte (10k itérations)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 03 : Intégration programmatique / cURL -->
+    <section class="section-spacer section-separator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">03 / SPÉCIFICATION TECHNIQUE</span>
+                <h2 class="section-title">Intégration via l'API REST</h2>
+                <p class="section-desc">
+                    Point de terminaison JSON direct pour interroger le modèle depuis n'importe quel client HTTP.
+                </p>
+            </div>
+
+            <div class="api-layout">
+                <div>
+                    <div class="code-title">Requête HTTP (POST /predict)</div>
+                    <pre class="code-block">curl -X POST "http://localhost:8000/predict" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "team_home": "France",
+       "team_away": "Brazil",
+       "is_neutral": 1.0,
+       "is_world_cup": 1.0
+     }'</pre>
+                </div>
+                <div>
+                    <div class="code-title">Réponse d'inférence (JSON)</div>
+                    <pre class="code-block">{
+  "match": "France vs Brazil",
+  "proba_victoire_home": 59.92,
+  "proba_nul_ou_defaite": 40.08,
+  "score_predit": "1 - 1",
+  "home_goals": 1,
+  "away_goals": 1
+}</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <span>MPPREDICTOR // RECHERCHE & MODÉLISATION COUPE DU MONDE 2026</span>
+            </div>
+            <div class="footer-links">
+                <a href="/docs">OpenAPI / Swagger</a>
+                <a href="/redoc">Documentation ReDoc</a>
+                <a href="/health">Statut du modèle</a>
+                <a href="https://github.com/444Atlas/MPPredictor">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function loadTeams() {
+            try {
+                const res = await fetch('/teams');
+                const data = await res.json();
+                const teams = data.teams || [];
+                const homeSelect = document.getElementById('team_home');
+                const awaySelect = document.getElementById('team_away');
+                const countBadge = document.getElementById('teams-count');
+
+                countBadge.textContent = teams.length + ' sélections disponibles';
+                homeSelect.innerHTML = '';
+                awaySelect.innerHTML = '';
+
+                teams.forEach(team => {
+                    const opt1 = document.createElement('option');
+                    opt1.value = team;
+                    opt1.textContent = team;
+                    if (team === 'France') opt1.selected = true;
+                    homeSelect.appendChild(opt1);
+
+                    const opt2 = document.createElement('option');
+                    opt2.value = team;
+                    opt2.textContent = team;
+                    if (team === 'Brazil') opt2.selected = true;
+                    awaySelect.appendChild(opt2);
+                });
+            } catch (err) {
+                console.error('Erreur chargement équipes:', err);
+            }
+        }
+
+        document.getElementById('simulation-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const resSection = document.getElementById('result-section');
+            const errContainer = document.getElementById('error-container');
+
+            errContainer.style.display = 'none';
+            btn.disabled = true;
+            btn.textContent = 'Calcul de convergence en cours...';
+
+            const payload = {
+                team_home: document.getElementById('team_home').value,
+                team_away: document.getElementById('team_away').value,
+                is_neutral: document.getElementById('is_neutral').checked ? 1.0 : 0.0,
+                is_world_cup: document.getElementById('is_world_cup').checked ? 1.0 : 0.0
+            };
+
+            try {
+                const res = await fetch('/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (!res.ok) {
+                    throw new Error(data.detail || 'Erreur lors du calcul de la prédiction.');
+                }
+
+                document.getElementById('match-label').textContent = data.match;
+                document.getElementById('score-label').textContent = data.score_predit;
+
+                const pHome = data.proba_victoire_home;
+                const pAway = data.proba_nul_ou_defaite;
+
+                document.getElementById('bar-home').style.width = pHome + '%';
+                document.getElementById('bar-away').style.width = pAway + '%';
+                document.getElementById('legend-home-text').textContent = 'Victoire ' + payload.team_home + ' : ' + pHome.toFixed(2) + '%';
+                document.getElementById('legend-away-text').textContent = 'Nul ou Défaite : ' + pAway.toFixed(2) + '%';
+
+                document.getElementById('metric-pwin').textContent = pHome.toFixed(2) + '%';
+                document.getElementById('metric-palt').textContent = pAway.toFixed(2) + '%';
+                document.getElementById('metric-score').textContent = data.score_predit;
+                document.getElementById('metric-goals').textContent = data.home_goals + ' / ' + data.away_goals;
+
+                resSection.style.display = 'block';
+                resSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } catch (err) {
+                errContainer.textContent = err.message;
+                errContainer.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Calculer les probabilités et le score';
+            }
+        });
+
+        loadTeams();
+    </script>
+</body>
+</html>
